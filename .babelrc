@@ -1,0 +1,10 @@
+{
+    "presets": [
+        "react-app",
+        "next/babel"
+      ],
+      "plugins": [
+        "react-css-modules",
+        [ "@babel/plugin-proposal-class-properties", { "loose": true } ],
+      ]
+}
