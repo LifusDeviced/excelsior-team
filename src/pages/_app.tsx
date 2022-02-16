@@ -1,20 +1,28 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
-import { GitHubProvider } from '@core/contexts/GitHubContext';
+import { StringsProvider } from '@core/contexts/StringsContext';
+import { APIProvider } from '@core/contexts/APIContext';
+import { CharactersProvider } from '@core/contexts/CharactersContext';
+import NavBar from '@components/NavBar';
 import '@core/styles/global.scss';
 
 class ContingencyApp extends App {
-  render() {
+  render(): JSX.Element {
     const { Component, pageProps } = this.props;
     return (
       <>
         <Head>
-          <title>Marvel Team</title>
+          <title>Excelsior Team</title>
         </Head>
-        <GitHubProvider>
-          <Component {...pageProps} />
-        </GitHubProvider>
+        <StringsProvider>
+          <APIProvider>
+            <CharactersProvider>
+              <NavBar />
+              <Component {...pageProps} />
+            </CharactersProvider>
+          </APIProvider>
+        </StringsProvider>
       </>
     );
   }

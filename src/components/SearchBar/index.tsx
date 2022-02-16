@@ -1,15 +1,15 @@
 // MARK: Libs
 import { useState } from 'react';
 // MARK: Hooks
-import useStrings from '../../core/hooks/useStrings';
+import { useStrings } from '../../core/contexts/StringsContext';
 // MARK Interfaces
 import { searchBarProps } from './interface';
 // MARK: Styles
 import styles from './styles.module.scss';
 
-const SearchBar = (props: searchBarProps) => {
+const SearchBar = (props: searchBarProps): JSX.Element => {
   const { getSearch } = props;
-  const { strings } = useStrings();
+  const strings = useStrings();
   const { searchBar } = strings.components;
   const [searchText, setSearchText] = useState<string>('');
 
