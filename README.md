@@ -8,8 +8,8 @@ Bem vindo!
 
 É necessário a seguinte lista de softwares para rodar e desenvolver essa aplicação:
 - yarn ^1.22
-- Node ^12
-- npm ^6
+- Node ^18
+- npm ^10
 - VScode
   _ Prettier
   _ ESLint
