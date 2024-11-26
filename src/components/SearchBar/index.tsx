@@ -1,5 +1,5 @@
 // MARK: Libs
-import { useState } from 'react';
+import { KeyboardEventHandler, useState } from 'react';
 // MARK: Hooks
 import { useStrings } from '../../core/contexts/StringsContext';
 // MARK Interfaces
@@ -26,6 +26,11 @@ const SearchBar = (props: searchBarProps): JSX.Element => {
       <input
         className={styles.container__input}
         onChange={handleInput}
+        onKeyUp={(e) => {
+          if (e.key === 'Enter' || e.keyCode === 13) {
+            handleSubmit();
+          }
+        }}
         placeholder={searchBar.placeHolder}
         id="searchInput"
       />

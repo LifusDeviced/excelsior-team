@@ -61,10 +61,11 @@ const Main = (): JSX.Element => {
 
   function handleInfinityScroll() {
     if (window) {
+      console.log('scrollHeight: ', document.body.scrollHeight);
+      console.log('scrollY: ', window.scrollY);
       const isEnough = document.body.scrollHeight * 0.8 <= window.scrollY;
       if (isEnough) {
         setOffset(offset + 20);
-        window.removeEventListener('scroll', handleInfinityScroll);
       }
     }
   }
@@ -73,6 +74,8 @@ const Main = (): JSX.Element => {
     if (window) {
       window.addEventListener('scroll', handleInfinityScroll);
     }
+
+    return () => window.removeEventListener('scroll', handleInfinityScroll);
   }, [isGetLoading]);
 
   return (

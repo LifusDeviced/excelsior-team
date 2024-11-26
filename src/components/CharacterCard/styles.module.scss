@@ -49,6 +49,18 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
+    
+        @media(min-width: 900px) {
+            height: 60%;
+        }
+    
+        @media(min-width: 1000px) {
+            height: 70%;
+        }
+
+        @media(min-width: 1440px) {
+            height: 75%;
+        }
 
         img {
             border-top-left-radius: .5rem;
