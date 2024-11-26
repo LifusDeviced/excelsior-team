@@ -61,9 +61,7 @@ const Main = (): JSX.Element => {
 
   function handleInfinityScroll() {
     if (window) {
-      console.log('scrollHeight: ', document.body.scrollHeight);
-      console.log('scrollY: ', window.scrollY);
-      const isEnough = document.body.scrollHeight * 0.8 <= window.scrollY;
+      const isEnough = document.body.scrollHeight * 0.7 <= window.scrollY;
       if (isEnough) {
         setOffset(offset + 20);
       }
@@ -83,7 +81,7 @@ const Main = (): JSX.Element => {
       <div className={styles.main}>
         <SearchBar getSearch={(value) => setNameSearch(value)} />
         {renderContent()}
-        {isGetLoading && <CircularProgress size={60} />}
+        {isGetLoading && <CircularProgress style={{ marginTop: '2rem' }} size={60} />}
       </div>
       <h5 className={styles.restriction}>
         Resolutions below 400px of width are not supported
