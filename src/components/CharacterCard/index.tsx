@@ -50,7 +50,7 @@ const CharacterCard = (props: CharacterCardProps): JSX.Element => {
       <div className={styles.card__info}>
         <strong>{limitText(character.name, 30)}</strong>
         <p className={styles.desktopDescription}>
-          {limitText(descriptionValue, 240)}
+          {limitText(descriptionValue, 220)}
         </p>
         <p className={styles.mobileDescription}>
           {limitText(descriptionValue, 120)}

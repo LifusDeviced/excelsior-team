@@ -9,10 +9,14 @@ const NavBar = (): JSX.Element => {
   const strings = useStrings();
   const { getExcelsiorTeam } = useCharactersContext();
   const { navBar } = strings.components;
+  const refresh = () => window.location.reload();
 
   return (
     <nav className={styles.nav}>
-      <div className={styles.nav__title}>
+      <div
+        className={styles.nav__title}
+        onClick={refresh}
+      >
         <img
           src="https://i.pinimg.com/236x/6e/3d/db/6e3ddb056560cabf02ace9ee0092e4d7.jpg"
           alt="logo"

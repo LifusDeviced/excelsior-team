@@ -15,10 +15,6 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-
-    @media(min-width: 600px) {
-      justify-content: flex-start;
-    }
   }
 
   a {
